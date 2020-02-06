@@ -32,6 +32,10 @@ CONFIGURE_FILE(
 
 # =============================================================================
 # X11,OpenGL, GLU, GLUT
+SET (OPENGL_INCLUDE_DIR               /usr/include/GL)
+SET (OPENGL_gl_LIBRARY                /usr/lib/x86_64-linux-gnu/libGL.so)
+SET (OPENGL_glu_LIBRARY               /usr/lib/x86_64-linux-gnu/libGLU.so)
+SET (GLUT_glut_LIBRARY                /usr/lib/x86_64-linux-gnu/libglut.so)
 
 IF (APPLE)
   SET (OPENGL_INCLUDE_DIR               /usr/X11R6/include)
