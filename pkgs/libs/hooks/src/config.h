@@ -131,7 +131,7 @@
 #include "/opt/PTLsim/ptlcalls.h"
 #endif
 
-//#define ENABLE_M5_TRIGGER 1
+#define ENABLE_M5_TRIGGER 1
 //#define ENABLE_M5_CKPTS 1
 //#if ENABLE_M5_TRIGGER
 //#include <stdint.h>
