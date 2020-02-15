@@ -9,7 +9,7 @@ LIBTOOL=${PARSECDIR}/pkgs/tools/libtool/inst/${PARSECPLAT}/bin/libtool
 CFLAGS?=-O2 -DM5OP_ADDR=0xFFFF0000 -Iinclude
 INCLUDEDIR=include
 TARGET=libhooks.la
-OBJS=hooks.lo m5.o m5op_x86.o m5_mmap.o
+OBJS=hooks.lo m5op_x86.o m5_mmap.o
 
 
 

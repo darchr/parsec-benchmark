@@ -30,7 +30,7 @@
  *          Ali Saidi
  */
 
-#include <gem5/asm/generic/m5ops.h>
+#include "include/asm/generic/m5ops.h"
 
 #if defined(M5OP_ADDR) && defined(M5OP_PIC)
 /* Use the memory mapped m5op interface */

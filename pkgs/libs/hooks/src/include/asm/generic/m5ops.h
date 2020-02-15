@@ -45,7 +45,7 @@
 #ifndef __GEM5_ASM_GENERIC_M5OPS_H__
 #define __GEM5_ASM_GENERIC_M5OPS_H__
 
-#include <gem5/asm/generic/m5op_flags.h>
+#include "m5op_flags.h"
 
 #define M5OP_ARM                0x00
 #define M5OP_QUIESCE            0x01
