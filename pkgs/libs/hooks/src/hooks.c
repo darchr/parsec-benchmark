@@ -94,6 +94,9 @@ static enum __parsec_benchmark bench;
 /* NOTE: Please look at hooks.h to see how these functions are used */
 
 void __parsec_bench_begin(enum __parsec_benchmark __bench) {
+  #if ENABLE_M5_TRIGGER
+  map_m5_mem();
+  #endif
   #if DEBUG
   num_bench_begins++;
   assert(num_bench_begins==1);
@@ -195,6 +198,10 @@ void __parsec_roi_begin() {
   #if ENABLE_PTLSIM_TRIGGER
   ptlcall_switch_to_sim();
   #endif //ENABLE_PTLSIM_TRIGGER
+
+  #if ENABLE_M5_TRIGGER
+  m5_work_begin(0,0);
+  #endif
 }
 
 
@@ -206,6 +213,11 @@ void __parsec_roi_end() {
   assert(num_roi_ends==1);
   assert(num_bench_ends==0);
   #endif //DEBUG
+
+  #if ENABLE_M5_TRIGGER
+  m5_work_end(0,0);
+  #endif
+  
 
   #if ENABLE_SIMICS_MAGIC
   MAGIC_BREAKPOINT;

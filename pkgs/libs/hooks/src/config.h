@@ -131,7 +131,13 @@
 #include "/opt/PTLsim/ptlcalls.h"
 #endif
 
-
+//#define ENABLE_M5_TRIGGER 1
+//#define ENABLE_M5_CKPTS 1
+//#if ENABLE_M5_TRIGGER
+//#include <stdint.h>
+//void m5_dumpreset_stats(uint64_t ns_delay, uint64_t ns_period);
+//void m5_checkpoint(uint64_t ns_delay, uint64_t ns_period);
+//#endif
 
 /** \brief Prefix for all output.
  *
