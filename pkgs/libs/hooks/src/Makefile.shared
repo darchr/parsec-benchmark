@@ -6,10 +6,10 @@
 PREFIX=${PARSECDIR}/pkgs/libs/hooks/inst/${PARSECPLAT}
 
 LIBTOOL=${PARSECDIR}/pkgs/tools/libtool/inst/${PARSECPLAT}/bin/libtool
-MCFLAGS?=-O2 -DM5OP_ADDR=0xFFFF0000 -Iinclude
+M5CFLAGS?=-O2 -DM5OP_ADDR=0xFFFF0000 -Iinclude
 INCLUDEDIR=include
 TARGET=libhooks.la
-OBJS=hooks.lo m5op_x86.o m5_mmap.o
+OBJS=hooks.lo m5op_x86.lo m5_mmap.lo
 
 
 
@@ -19,11 +19,11 @@ all: $(OBJS)
 %.lo : %.c
 	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -Wall -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -c $<
 
-%.o: %.S
-	$(LIBTOOL) --mode=compile $(MCFLAGS) -o $@ -c $<
+m5op_x86.lo : lo m5op_x86.S
+	$(LIBTOOL) --mode=compile $(CC) $(M5CFLAGS) -o $@ -c $<
 
-%.o: %.c
-	$(LIBTOOL) --mode=compile $(MCFLAGS) -o $@ -c $<
+m5_mmap.lo : m5_mmap.c
+	$(LIBTOOL) --mode=compile $(CC) $(M5CFLAGS) -o $@ -c $<
 
 clean:
 	$(LIBTOOL) --mode=clean rm -f $(OBJS)
