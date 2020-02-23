@@ -95,7 +95,6 @@ static enum __parsec_benchmark bench;
 
 void __parsec_bench_begin(enum __parsec_benchmark __bench) {
   #if ENABLE_M5_TRIGGER
-  printf("calling map_m5_mem");
   map_m5_mem();
   #endif
   #if DEBUG

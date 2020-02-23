@@ -46,7 +46,8 @@
 #define __GEM5_ASM_GENERIC_M5OPS_H__
 
 #include "m5op_flags.h"
-
+#define M5OP_ADDR 
+#define M5OP_PIC
 #define M5OP_ARM                0x00
 #define M5OP_QUIESCE            0x01
 #define M5OP_QUIESCE_NS         0x02
@@ -68,7 +69,6 @@
 #define M5OP_WRITE_FILE         0x4F
 #define M5OP_READ_FILE          0x50
 #define M5OP_DEBUG_BREAK        0x51
-#define M5OP_SWITCH_CPU         0x52
 #define M5OP_ADD_SYMBOL         0x53
 #define M5OP_PANIC              0x54
 
