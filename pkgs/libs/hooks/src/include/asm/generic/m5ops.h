@@ -67,6 +67,7 @@
 #define M5OP_WRITE_FILE         0x4F
 #define M5OP_READ_FILE          0x50
 #define M5OP_DEBUG_BREAK        0x51
+#define M5OP_SWITCH_CPU         0x52
 #define M5OP_ADD_SYMBOL         0x53
 #define M5OP_PANIC              0x54
 
