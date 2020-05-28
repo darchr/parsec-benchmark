@@ -39,6 +39,8 @@
 
 #include <assert.h>
 
+#include <cstdlib>
+
 cmLocalGenerator::cmLocalGenerator()
 {
   this->Makefile = new cmMakefile;
@@ -375,7 +377,7 @@ void cmLocalGenerator::GenerateInstallRules()
        << this->Makefile->GetCurrentDirectory() << std::endl << std::endl;
   fout << "# Set the install prefix" << std::endl
        << "IF(NOT DEFINED CMAKE_INSTALL_PREFIX)" << std::endl
-       << "  SET(CMAKE_INSTALL_PREFIX \"" << prefix << "\")" << std::endl
+       << "  SET(CMAKE_INSTALL_PREFIX \"" << std::getenv("CMAKE_DIR") << "\")" << std::endl
        << "ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)" << std::endl
        << "STRING(REGEX REPLACE \"/$\" \"\" CMAKE_INSTALL_PREFIX "
        << "\"${CMAKE_INSTALL_PREFIX}\")" << std::endl

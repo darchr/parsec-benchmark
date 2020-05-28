@@ -102,3 +102,7 @@ else
   export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${PARSECDIR}/pkgs/libs/hooks/inst/${PARSECPLAT}/lib"
 fi
 
+if [ -z "${CMAKE_DIR}" ]; then 
+  export CMAKE_DIR="${xxPARSECDIRxx}/cmake_dir"
+fi
+
