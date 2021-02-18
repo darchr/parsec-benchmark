@@ -1,6 +1,7 @@
 TARGET = raytrace
 OBJS = bbox.o cr.o env.o fbuf.o geo.o huprn.o husetup.o hutv.o isect.o main.o matrix.o memory.o poly.o raystack.o shade.o sph.o trace.o tri.o workpool.o
 
+CFLAGS := $(CFLAGS) -fcommon
 CFLAGS := $(CFLAGS) -Wall -W -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wdisabled-optimization
 CFLAGS := $(CFLAGS) -Wpadded -Winline -Wpointer-arith -Wsign-compare -Wendif-labels
 LDFLAGS := $(LDFLAGS) -lm 
